@@ -7,12 +7,13 @@ class TodoList extends Component {
     return (
       <div>
         <ul className="list-group my-5">
-          <h3 className="text-capitalize text-center">Todo List </h3>
           {items.map(item => {
             return (
               <TodoItem
                 key={item.id}
                 title={item.title}
+                category={item.category}
+                notes={item.notes}
                 handleDelete={() => handleDelete(item.id)}
                 handleEdit={() => handleEdit(item.id)}
               />
