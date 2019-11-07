@@ -3,6 +3,7 @@ import TodoInput from './component/TodoInput';
 import TodoList from './component/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import uuid from 'uuid';
+import Header from '../src/component/header/header'
 
 class App extends Component {
   state = {
@@ -62,6 +63,8 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+         <Header/>
+      
         <div className="row">
           <div className="col-10 mx-auto col-md-8 mt-4">
             <h3 className="text-capitalize text-center"> todo input</h3>
