@@ -1,7 +1,56 @@
-.header-color {
-  background-color: #293a80;
+.btn-primary {
+  background-color: rgb(255, 255, 255); /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.btn-primary img {
+  height: 50%;
+  width: 50%;
+}
+.btn-secondary {
+  background-color: rgb(255, 255, 255); /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.btn-secondary img {
+  height: 50%;
+  width: 50%;
 }
 
-.space {
-  height: 40px;
+.appName {
+  font-size: 30px;
+  text-align: center;
+  color: rgb(201, 108, 3);
+}
+
+@media screen and (max-width: 576px) {
+.appName {
+  font-size: 16px;
+  text-align: center;
+  color: rgb(201, 108, 3);
+}
+}
+
+@media screen and (max-width: 768px) {
+  .appName {
+      font-size: 20px;
+      text-align: center;
+      color: rgb(201, 108, 3);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .appName {
+      font-size: 28px;
+      text-align: center;
+      color: rgb(201, 108, 3);
+  }
 }

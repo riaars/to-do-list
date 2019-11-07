@@ -4,7 +4,6 @@ import TodoList from '../src/component/TodoList/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../src/component/header/Header';
 import uuid from 'uuid';
-import Header from '../src/component/header/header'
 
 class App extends Component {
   state = {
