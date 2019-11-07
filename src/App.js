@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import { Container, Button, Link } from 'react-floating-action-button';
 import TodoInput from '../src/component/TodoInput/TodoInput';
 import TodoList from '../src/component/TodoList/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../src/component/header/Header';
+import AddIcon from '../src/component/floating button/floating';
 import uuid from 'uuid';
 
 class App extends Component {
@@ -83,6 +85,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <AddIcon />
         <div className="space"></div>
         <div className="container">
           <div className="row">

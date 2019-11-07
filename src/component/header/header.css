@@ -1,56 +1,37 @@
-.btn-primary {
-  background-color: rgb(255, 255, 255); /* Green */
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-.btn-primary img {
-  height: 50%;
-  width: 50%;
-}
-.btn-secondary {
-  background-color: rgb(255, 255, 255); /* Green */
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-.btn-secondary img {
-  height: 50%;
-  width: 50%;
+.col {
+  font-size: xx-large;
+  justify-content: center;
+  align-items: center;
 }
 
-.appName {
-  font-size: 30px;
-  text-align: center;
-  color: rgb(201, 108, 3);
+.btn {
+  border-radius: 0;
 }
 
-@media screen and (max-width: 576px) {
-.appName {
-  font-size: 16px;
-  text-align: center;
-  color: rgb(201, 108, 3);
-}
+.btn img {
+  filter: invert(100%);
+  height: 10%;
+  width: 10%;
 }
 
 @media screen and (max-width: 768px) {
-  .appName {
-      font-size: 20px;
-      text-align: center;
-      color: rgb(201, 108, 3);
-  }
+.btn img {
+    filter: invert(100%);
+    height: 70%;
+    width: 70%;
+}
+.col {
+  font-size: medium;
+}
 }
 
 @media screen and (max-width: 992px) {
-  .appName {
-      font-size: 28px;
-      text-align: center;
-      color: rgb(201, 108, 3);
-  }
+.btn img {
+    filter: invert(100%);
+    height: 15%;
+    width: 15%;
+}
+.col {
+  font-size: large;
+}
 }
