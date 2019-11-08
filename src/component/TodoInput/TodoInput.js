@@ -59,16 +59,10 @@ class TodoInput extends Component {
               value={item_notes}
               rows="5"
               required
-              onChange={handleChangeNotes}></textarea>
+              onChange={handleChangeNotes}> </textarea>
           </div>
 
-          <button
-            type="submit"
-            className={
-              editItem
-                ? 'btn btn-block btn-success mt-3'
-                : 'btn btn-block btn-primary mt-3'
-            }>
+          <button type="submit" className={ editItem ? 'btn btn-block btn-success mt-3' : 'btn btn-block btn-primary mt-3'}>
             {editItem ? 'Edit Item' : 'Add Item'}
           </button>
         </form>
