@@ -1,27 +1,34 @@
 import React, {Component} from 'react';
+import './TodoList.css';
 
 class TodoItem extends Component {
   render() {
-    const {category, notes, handleDelete, handleEdit} = this.props;
-    const {title} = this.props;
+    const {title, category, notes, handleDelete, handleEdit} = this.props;
+
     return (
       <li className="list-group-item text-capitalize d-flex justify-content-between my-2">
-        <h3>{title}</h3>
-        <div>
-          <h6>{category}</h6>
-        </div>
+        <div className="row">
+          <div className="col-lg-8 col-sm-12">
+            <h3>{title}</h3>
+            <div className="subtitle">{notes}</div>
+          </div>
 
-        <div>
-          <h6>{notes}</h6>
-        </div>
+          <div className="col-lg-2 col-sm-12 category">
+            <button
+              className="btn btn-outline-info"
+              style={{borderRadius: '20px'}}>
+              {category}
+            </button>
+          </div>
 
-        <div className="todo-icon">
-          <span className="mx-2 text-success" onClick={handleEdit}>
-            <i className="fas fa-pen" />
-          </span>
-          <span className="mx-2 text-danger" onClick={handleDelete}>
-            <i className="fas fa-trash" />
-          </span>
+          <div className="todo-icon col-lg-2 col-sm-12">
+            <span className="mx-2 text-success" onClick={handleEdit}>
+              <i className="fas fa-pen" />
+            </span>
+            <span className="mx-2 text-danger" onClick={handleDelete}>
+              <i className="fas fa-trash" />
+            </span>
+          </div>
         </div>
       </li>
     );

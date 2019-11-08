@@ -85,10 +85,10 @@ class App extends Component {
       items: filteredItems,
     });
 
-    localStorage.setItem('deleteItem', deleteItem);
-    // console.log(JSON.parse(localStorage.getItem('deleteItem')));
-    localStorage.removeItem('deleteItem');
-    console.log(localStorage);
+    // localStorage.setItem('deleteItem', deleteItem);
+    // // console.log(JSON.parse(localStorage.getItem('deleteItem')));
+    // localStorage.removeItem('deleteItem');
+    // console.log(localStorage);
   };
 
   handleEdit = id => {

@@ -6,7 +6,7 @@ class TodoList extends Component {
     const {items, clearList, handleDelete, handleEdit} = this.props;
     return (
       <div>
-        <ul className="list-group my-5">
+        <ul className="list-group my-3">
           {items.map(item => {
             return (
               <TodoItem

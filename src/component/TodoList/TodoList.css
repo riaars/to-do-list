@@ -1,0 +1,11 @@
+.subtitle {
+  color: gray;
+  font-size: 12px;
+}
+
+.category {
+  padding: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 20px;
+}
