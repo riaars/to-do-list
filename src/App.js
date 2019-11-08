@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 //import { Container, Button, Link } from 'react-floating-action-button';
+import ReactDOM from "react-dom";
 import TodoInput from '../src/component/TodoInput/TodoInput';
 import TodoList from '../src/component/TodoList/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './component/header/Header';
+import Header from './component/Header/Header';
 import AddIcon from '../src/component/floating button/floating';
 import uuid from 'uuid';
 import {Col, Row, Container} from 'react-bootstrap';
@@ -14,12 +15,21 @@ let todoList = localStorage.getItem('items')
 console.log(todoList);
 class App extends Component {
   state = {
+    show: false,
     items: todoList,
     id: uuid(),
     item: '',
     item_notes: '',
     category: '',
     editItem: false,
+  };
+
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
   };
 
   handleChange = e => {
@@ -135,7 +145,7 @@ class App extends Component {
             </Col>
           </Row>
         </Container>
-        <AddIcon />
+        <AddIcon/>
       </div>
     );
   }
