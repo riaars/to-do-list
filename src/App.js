@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 //import { Container, Button, Link } from 'react-floating-action-button';
-import ReactDOM from "react-dom";
 import TodoInput from '../src/component/TodoInput/TodoInput';
 import TodoList from '../src/component/TodoList/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './component/Header/Header';
+import Header from '../src/component/Header/Header';
 import AddIcon from '../src/component/floating button/floating';
 import uuid from 'uuid';
 import {Col, Row, Container} from 'react-bootstrap';
+import {Button, Link} from 'react-floating-action-button';
+import Modal from '../src/component/Modal/Modal';
 
 let todoList = localStorage.getItem('items')
   ? JSON.parse(localStorage.getItem('items'))
@@ -15,23 +16,22 @@ let todoList = localStorage.getItem('items')
 console.log(todoList);
 class App extends Component {
   state = {
-    show: false,
     items: todoList,
     id: uuid(),
     item: '',
     item_notes: '',
     category: '',
     editItem: false,
+    show: false,
   };
 
   showModal = () => {
-    this.setState({ show: true });
+    this.setState({show: true});
   };
 
   hideModal = () => {
-    this.setState({ show: false });
+    this.setState({show: false});
   };
-
   handleChange = e => {
     this.setState({
       item: e.target.value,
@@ -121,20 +121,7 @@ class App extends Component {
         <Header />
         <Container>
           <Row className="mt-5">
-            <Col lg={4} md={6} sm={12}>
-              <h2>Create a Task</h2>
-              <TodoInput
-                item={this.state.item}
-                item_notes={this.state.item_notes}
-                handleChange={this.handleChange}
-                handleChangeNotes={this.handleChangeNotes}
-                handleChangeCategory={this.handleChangeCategory}
-                handleSubmit={this.handleSubmit}
-                editItem={this.state.editItem}
-              />
-            </Col>
-
-            <Col lg={8} md={6} sm={12}>
+            <Col lg={12} md={12} sm={12}>
               <h2>My Todo List</h2>
               <TodoList
                 items={this.state.items}
@@ -145,7 +132,30 @@ class App extends Component {
             </Col>
           </Row>
         </Container>
-        <AddIcon/>
+        {/* <AddIcon /> */}
+        <div>
+          <Container>
+            <Modal show={this.state.show} handleClose={this.hideModal}>
+              <TodoInput
+                item={this.state.item}
+                item_notes={this.state.item_notes}
+                handleChange={this.handleChange}
+                handleChangeNotes={this.handleChangeNotes}
+                handleChangeCategory={this.handleChangeCategory}
+                handleSubmit={this.handleSubmit}
+                editItem={this.state.editItem}
+              />
+            </Modal>
+          </Container>
+          <Container>
+            <Button
+              tooltip="Create New Schedule"
+              icon="fas fa-plus"
+              rotate={true}
+              onClick={this.showModal}
+            />
+          </Container>
+        </div>
       </div>
     );
   }

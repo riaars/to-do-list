@@ -32,12 +32,11 @@ class AddIcon extends Component {
           </Modal>
         </Container>
         <Container>
-          <Button
+          <button
             tooltip="Create New Schedule"
             icon="fas fa-plus"
             rotate={true}
-            onClick={this.showModal}
-          />
+            onClick={this.showModal}></button>
         </Container>
       </div>
     );
