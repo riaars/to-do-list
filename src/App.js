@@ -5,9 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../src/component/header/Header';
 import uuid from 'uuid';
 
+let todoList = localStorage.getItem('items')
+  ? JSON.parse(localStorage.getItem('items'))
+  : [];
+console.log(todoList);
 class App extends Component {
   state = {
-    items: [],
+    items: todoList,
     id: uuid(),
     item: '',
     item_notes: '',
@@ -50,19 +54,38 @@ class App extends Component {
       id: uuid(),
       editItem: false,
     });
+
+    todoList.push(newItem);
+    console.log(todoList);
+    localStorage.setItem('items', JSON.stringify(todoList));
   };
 
   clearList = () => {
     this.setState({
       items: [],
     });
+
+    localStorage.clear();
   };
 
   handleDelete = id => {
-    const filteredItems = this.state.items.filter(item => item.id !== id);
+    // const filteredItems = this.state.items.filter(item => item.id !== id);
+    const deleteItem = JSON.parse(localStorage.getItem('items')).find(
+      item => item.id === id
+    );
+
+    const filteredItems = JSON.parse(localStorage.getItem('items')).filter(
+      item => item.id !== id
+    );
+
     this.setState({
       items: filteredItems,
     });
+
+    localStorage.setItem('deleteItem', deleteItem);
+    // console.log(JSON.parse(localStorage.getItem('deleteItem')));
+    localStorage.removeItem('deleteItem');
+    console.log(localStorage);
   };
 
   handleEdit = id => {
