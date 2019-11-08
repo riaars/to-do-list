@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import { Container, Button, Link } from 'react-floating-action-button';
+//import { Container, Button, Link } from 'react-floating-action-button';
 import TodoInput from '../src/component/TodoInput/TodoInput';
 import TodoList from '../src/component/TodoList/TodoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from '../src/component/header/Header';
+import Header from './component/Header/Header';
 import AddIcon from '../src/component/floating button/floating';
 import uuid from 'uuid';
+import {Col, Row , Container} from 'react-bootstrap';
 
 class App extends Component {
   state = {
@@ -83,37 +84,38 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Header />
-        <AddIcon />
-        <div className="space"></div>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <h2>Create a Schedule</h2>
-              <TodoInput
-                item={this.state.item}
-                item_notes={this.state.item_notes}
-                handleChange={this.handleChange}
-                handleChangeNotes={this.handleChangeNotes}
-                handleChangeCategory={this.handleChangeCategory}
-                handleSubmit={this.handleSubmit}
-                editItem={this.state.editItem}
-              />
-            </div>
+        <div>
+          <Header />
+          <Container>
+            <Row className="mt-5">
+              <Col lg={4} md={6} sm={12}>
+                <h2>Create a Task</h2>
+                <TodoInput
+                    item={this.state.item}
+                    item_notes={this.state.item_notes}
+                    handleChange={this.handleChange}
+                    handleChangeNotes={this.handleChangeNotes}
+                    handleChangeCategory={this.handleChangeCategory}
+                    handleSubmit={this.handleSubmit}
+                    editItem={this.state.editItem}
+                />
+              </Col>
 
-            <div className="col-lg-8 col-md-6 col-sm-12">
-              <h2>My Todo List</h2>
-              <TodoList
-                items={this.state.items}
-                clearList={this.clearList}
-                handleDelete={this.handleDelete}
-                handleEdit={this.handleEdit}
-              />
-            </div>
-          </div>
+              <Col lg={8} md={6} sm={12}>
+                <h2>My Todo List</h2>
+                <TodoList
+                    items={this.state.items}
+                    clearList={this.clearList}
+                    handleDelete={this.handleDelete}
+                    handleEdit={this.handleEdit}
+                />
+              </Col>
+            </Row>
+
+          </Container>
+          <AddIcon />
+
         </div>
-      </div>
     );
   }
 }
